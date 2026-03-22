@@ -1,0 +1,22 @@
+=== Run information ===
+
+Scheme:       weka.associations.FPGrowth -P 2 -I -1 -N 10 -T 0 -C 0.9 -D 0.05 -U 1.0 -M 0.1
+Relation:     final_weka_integrated_dataset
+Instances:    500
+Attributes:   10
+              study_hours
+              attendance
+              assignment_performance
+              sports_level
+              cultural_activity
+              club_participation
+              volunteering
+              leadership_role
+              project_performance
+              final_grade
+=== Associator model (full training set) ===
+
+FPGrowth found 1 rules (displaying top 1)
+
+1. [leadership_role=no, final_grade=Fail]: 60 ==> [project_performance=Low]: 54   <conf:(0.9)> lift:(1.45) lev:(0.03) conv:(3.26) 
+

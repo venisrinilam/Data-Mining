@@ -1,0 +1,76 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     final_weka_integrated_dataset
+Instances:    500
+Attributes:   10
+              study_hours
+              attendance
+              assignment_performance
+              sports_level
+              cultural_activity
+              club_participation
+              volunteering
+              leadership_role
+              project_performance
+              final_grade
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+study_hours = Low
+|   assignment_performance = Low
+|   |   project_performance = High: Pass (72.0/10.0)
+|   |   project_performance = Low
+|   |   |   attendance = yes
+|   |   |   |   sports_level = yes: Pass (39.0/8.0)
+|   |   |   |   sports_level = no
+|   |   |   |   |   volunteering = yes: Pass (6.0/1.0)
+|   |   |   |   |   volunteering = no: Fail (6.0/1.0)
+|   |   |   attendance = no
+|   |   |   |   cultural_activity = no: Fail (28.0/4.0)
+|   |   |   |   cultural_activity = yes
+|   |   |   |   |   sports_level = yes
+|   |   |   |   |   |   volunteering = yes: Pass (19.0/4.0)
+|   |   |   |   |   |   volunteering = no
+|   |   |   |   |   |   |   leadership_role = yes: Fail (10.0/3.0)
+|   |   |   |   |   |   |   leadership_role = no: Pass (11.0/4.0)
+|   |   |   |   |   sports_level = no: Fail (12.0/3.0)
+|   assignment_performance = High: Pass (118.0/9.0)
+study_hours = High: Pass (179.0/8.0)
+
+Number of Leaves  : 	11
+
+Size of the tree : 	21
+
+
+Time taken to build model: 0.04 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         432               86.4    %
+Incorrectly Classified Instances        68               13.6    %
+Kappa statistic                          0.4646
+Mean absolute error                      0.2006
+Root mean squared error                  0.3338
+Relative absolute error                 68.3482 %
+Root relative squared error             87.2585 %
+Total Number of Instances              500     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.954    0.551    0.889      0.954    0.920      0.478    0.784     0.920     Pass
+                 0.449    0.046    0.678      0.449    0.541      0.478    0.784     0.506     Fail
+Weighted Avg.    0.864    0.461    0.851      0.864    0.853      0.478    0.784     0.846     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 392  19 |   a = Pass
+  49  40 |   b = Fail
+

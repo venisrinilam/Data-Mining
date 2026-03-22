@@ -1,0 +1,57 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     perfect_tree_reduced
+Instances:    16
+Attributes:   5
+              study_hours
+              attendance
+              assignment_performance
+              project_performance
+              final_grade
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+
+RandomTree
+==========
+
+attendance = yes : Pass (8/0)
+attendance = no
+|   study_hours = Low
+|   |   assignment_performance = Low
+|   |   |   project_performance = High : Pass (1/0)
+|   |   |   project_performance = Low : Fail (1/0)
+|   |   assignment_performance = High : Pass (2/0)
+|   study_hours = High : Pass (4/0)
+
+Size of the tree : 9
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances          12               75      %
+Incorrectly Classified Instances         4               25      %
+Kappa statistic                         -0.1034
+Mean absolute error                      0.25  
+Root mean squared error                  0.5   
+Relative absolute error                147.027  %
+Root relative squared error            191.1775 %
+Total Number of Instances               16     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.800    1.000    0.923      0.800    0.857      -0.124   0.400     0.926     Pass
+                 0.000    0.200    0.000      0.000    0.000      -0.124   0.400     0.063     Fail
+Weighted Avg.    0.750    0.950    0.865      0.750    0.804      -0.124   0.400     0.872     
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 12  3 |  a = Pass
+  1  0 |  b = Fail
+
